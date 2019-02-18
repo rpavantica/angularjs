@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <!--  Meta  -->
+  <meta charset="UTF-8" />
+  <title>Angular Time</title>
+  
+  <!--  Styles  -->
+  <script src="https://code.angularjs.org/1.5.3/angular.min.js"></script>
+  <link rel="stylesheet" href="dist/index.min.css"></link>
+</head>
+<body>
+  <div ng-app="myApp">
+     <div class="container" ng-controller="mainController">
+      <h1 ng-class="{red: textColor}">{{ cart }}</h1>
+      <input type="checkbox" ng-model="textColor">
+      <div class="list-group">        
+        <search-result ng-class="{{btnClass}}" person-object="person" parse-person-function="parsePerson(aperson)" ng-repeat="person in people"></search-result>
+      </div>
+    </div>
+  </div>  
+  <script src="dist/index.min.js"></script>
+</body>
+</html>
