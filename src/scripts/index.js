@@ -26,24 +26,16 @@ myApp.directive("searchResult", function() {
      personObject: "=",
      parsePersonFunction: "&"
     },
-    compile: function(elem, attrs) {
-      console.log('Compiling');
-      elem.attr('class', 'blue');
-     // elem.className = "blue";
-      console.log(elem);
-      return {
-        pre: function(scope, elements, attrs) {
-          console.log('pre-linking');
-          console.log(elements); 
-        },
-        post: function(scope, elements, attrs) {
-          console.log('post-linking');
-          console.log(elements); 
-        }
-      }        
-    }
-  }
-})
+    link: (scope, elements, attrs) => {
+      console.log('Linkinging');
+      console.log(elements); 
+      console.log(scope);
+      if (scope.personObject.firstName == 'gitza') {
+        elements.attr('class', 'blue');
+      }
+    },
+  }        
+});
 
 // const pp = "test";
 // const ppTest = (pp) => {
