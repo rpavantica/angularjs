@@ -3,7 +3,7 @@ var myApp = angular.module('myApp', ['ngRoute', 'ngResource']);
 
 //routes
 
-myApp.config(['$routeProvider', function($routeProvider){
+myApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
   $routeProvider
 
     // route for the home page
@@ -17,6 +17,13 @@ myApp.config(['$routeProvider', function($routeProvider){
         templateUrl : 'pages/page-two.html',
         controller  : 'pageTwoController'
     })
+    
+    $locationProvider.html5Mode({
+      enabled: true,
+      requireBase: false
+    });
+    
+   // $locationProvider.html5Mode(true);
 }]);
 
 
